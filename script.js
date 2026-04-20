@@ -52,4 +52,49 @@
       console.info('Video placeholder clicked — wire up a real <video> or embed here.');
     });
   }
+
+  // ---------- Cookies popup ----------
+  const popup = document.getElementById('cookiesPopup');
+  if (popup) {
+    const STORAGE_KEY = 'zyrtec.cookieConsent';
+    const toggleBtn = document.getElementById('cookiesToggle');
+    const toggleLabel = toggleBtn && toggleBtn.querySelector('.cookies-toggle-label');
+    const acceptBtn = document.getElementById('cookiesAccept');
+    const optOutBtn = document.getElementById('cookiesOptOut');
+    const checkboxes = {
+      performance: document.getElementById('cookiePerformance'),
+      functional:  document.getElementById('cookieFunctional'),
+      advertising: document.getElementById('cookieAdvertising'),
+    };
+
+    let stored = null;
+    try { stored = JSON.parse(localStorage.getItem(STORAGE_KEY) || 'null'); } catch (_) {}
+
+    if (!stored) {
+      popup.hidden = false;
+    }
+
+    const savePreferences = (decision) => {
+      const prefs = {
+        decision, // 'accepted' | 'opted-out'
+        performance: decision === 'accepted' ? !!checkboxes.performance.checked : false,
+        functional:  decision === 'accepted' ? !!checkboxes.functional.checked  : false,
+        advertising: decision === 'accepted' ? !!checkboxes.advertising.checked : false,
+        timestamp: new Date().toISOString(),
+      };
+      try { localStorage.setItem(STORAGE_KEY, JSON.stringify(prefs)); } catch (_) {}
+      popup.hidden = true;
+    };
+
+    if (toggleBtn) {
+      toggleBtn.addEventListener('click', () => {
+        const collapsed = popup.classList.toggle('is-collapsed');
+        toggleBtn.setAttribute('aria-expanded', String(!collapsed));
+        if (toggleLabel) toggleLabel.textContent = collapsed ? 'Show more' : 'Show less';
+      });
+    }
+
+    if (acceptBtn) acceptBtn.addEventListener('click', () => savePreferences('accepted'));
+    if (optOutBtn) optOutBtn.addEventListener('click', () => savePreferences('opted-out'));
+  }
 })();

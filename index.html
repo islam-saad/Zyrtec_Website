@@ -178,6 +178,79 @@
     </div>
   </footer>
 
+  <!-- ============== COOKIES POPUP ============== -->
+  <aside id="cookiesPopup" class="cookies-popup" role="dialog" aria-live="polite"
+         aria-labelledby="cookiesTitle" aria-describedby="cookiesIntro" hidden>
+    <div class="container">
+      <h2 id="cookiesTitle" class="cookies-title">We use cookies</h2>
+      <p id="cookiesIntro" class="cookies-intro">
+        We use cookies to enhance your website experience. Some cookies are necessary to run the website.
+        Others are optional: performance cookies show us how you use our website and features;
+        functional cookies remember your preferences and advertising cookies help us share relevant content.
+        <a href="#cookie-policy" class="cookies-policy-link">Cookie Policy</a>
+      </p>
+
+      <div class="cookies-details" id="cookiesDetails">
+        <label class="cookie-option">
+          <input type="checkbox" id="cookiePerformance" checked />
+          <span class="cookie-check" aria-hidden="true"></span>
+          <span class="cookie-option-text">
+            <span class="cookie-option-title">Performance cookies</span>
+            <span class="cookie-option-desc">
+              Collect information about your use of our website, e.g. page visits or error messages.
+              This information is aggregated and anonymised and used to improve our website. If you
+              don't allow these cookies, we won't know when you have visited our website and won't
+              be able to monitor its performance.
+            </span>
+          </span>
+        </label>
+
+        <label class="cookie-option">
+          <input type="checkbox" id="cookieFunctional" checked />
+          <span class="cookie-check" aria-hidden="true"></span>
+          <span class="cookie-option-text">
+            <span class="cookie-option-title">Functional cookies</span>
+            <span class="cookie-option-desc">
+              Allow our websites to remember your user name, language preference, or geographic
+              region. This information is used to provide a personalised experience and to make the
+              website easier to use. If you don't allow these cookies, then some or all features
+              may not function.
+            </span>
+          </span>
+        </label>
+
+        <label class="cookie-option">
+          <input type="checkbox" id="cookieAdvertising" checked />
+          <span class="cookie-check" aria-hidden="true"></span>
+          <span class="cookie-option-text">
+            <span class="cookie-option-title">Advertising cookies</span>
+            <span class="cookie-option-desc">
+              Allow us to display advertising we think is relevant to you. We build profiles based
+              on your browsing history, which we share with our advertising partners to show you
+              relevant advertisements on other sites. If you don't allow these cookies you will
+              still receive advertising, but it will be less relevant.
+            </span>
+          </span>
+        </label>
+      </div>
+
+      <div class="cookies-actions">
+        <button type="button" class="cookies-toggle" id="cookiesToggle"
+                aria-controls="cookiesDetails" aria-expanded="true">
+          <span class="cookies-toggle-label">Show less</span>
+          <svg class="cookies-toggle-icon" viewBox="0 0 16 16" width="14" height="14" aria-hidden="true">
+            <path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                  stroke-linejoin="round" d="M3 10l5-5 5 5"/>
+          </svg>
+        </button>
+        <div class="cookies-buttons">
+          <button type="button" class="btn btn-cookies-outline" id="cookiesOptOut">OPT OUT</button>
+          <button type="button" class="btn btn-cookies-primary" id="cookiesAccept">ACCEPT</button>
+        </div>
+      </div>
+    </div>
+  </aside>
+
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
   <script src="./script.js"></script>
 </body>
