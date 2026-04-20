@@ -3,7 +3,9 @@
     "allow": [
       "mcp__claude_ai_Figma__get_design_context",
       "mcp__claude_ai_Figma__get_metadata",
-      "mcp__claude_ai_Figma__get_screenshot"
+      "mcp__claude_ai_Figma__get_screenshot",
+      "mcp__fe907ae2-7074-4006-96f4-16ab48284795__get_design_context",
+      "mcp__fe907ae2-7074-4006-96f4-16ab48284795__get_metadata"
     ]
   }
 }
