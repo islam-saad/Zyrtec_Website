@@ -155,7 +155,7 @@
 
 .references-block .ref-title {
   font-weight: 700;
-  color: #222;
+  color: var(--color-zyrtec-blue);
   margin-bottom: 8px;
 }
 
